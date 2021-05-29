@@ -22,4 +22,5 @@ object APIFactory {
         .build()
 
     val APIService: SecretService = retrofit().create(SecretService::class.java)
+    var token: String = ""
 }

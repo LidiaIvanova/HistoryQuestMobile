@@ -2,6 +2,7 @@ package com.tsu.alotofquestions.data
 
 import com.tsu.alotofquestions.data.model.LoggedInUser
 import com.tsu.alotofquestions.data.model.Token
+import com.tsu.alotofquestions.data.network.APIFactory
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -34,6 +35,7 @@ class LoginRepository(val dataSource: LoginDataSource) {
 
         if (result is Result.Success) {
             //setLoggedInUser(result.data)
+            APIFactory.token = "Bearer " + result.data.token
         }
 
         return result
